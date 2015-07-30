@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+
+    <title>Ambassador Member Management</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= csrf_meta_tags %>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Ambassador Member Management</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Members</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">My Profile</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Wrapper -->
+    <div class="container-fluid">
+      <div class="row">
+
+        <!-- Customer nav -->
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar list-group">
+            <li class="active"><a href="#">Stephen Wai <span class="badge pull-right">new</span><span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Tony Stark</a></li>
+            <li><a href="#">Steve Rogers</a></li>
+            <li><a href="#">Natasha Romanoff</a></li>
+            <li><a href="#">Clint Barton<span class="badge pull-right">new</span></a></li>
+            <li><a href="#">Bruce Banner</a></li>
+            <li><a href="#">James Rhodes<span class="badge pull-right">new</span></a></li>
+          </ul>
+        </div>
+        <!-- /Customer nav -->
+
+        <!-- Dashboard -->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+          <!-- Top info-->
+          <div class="container-fluid">
+              <div class="col-md-3">
+                  <%= image_tag "swai.jpg", alt: "Stephen Wai", class: "avatar" %>
+              </div>
+              <div class="col-md-9">
+                  <h2 class="page-header name">Stephen Wai</h2>
+                  <div class="info-line status">Platinum Preferred Guest 100+</div>
+                  <div class="info-line">Member #: 29552750173</div>
+                  <div class="info-line">Award Points: 303,776</div>
+                  <div class="info-line">Lifetime Total: 454 nights since 2010</div>
+                  <div class="info-line">YTD: 20 stays / 72 nights </div>
+                  <div class="info-line">Status Expiry: February 2016</div>
+              </div>
+          </div>
+
+          <ul id="main-tabs" class="nav nav-tabs">
+              <li role="presentation">
+              <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a>
+              </li>
+              <li role="presentation">
+              <a href="#stays" aria-controls="stays" role="tab" data-toggle="tab">Stays</a>
+              </li>
+              <li role="presentation" class="active">
+              <a href="#chat" aria-controls="chat" role="tab" data-toggle="tab">Text Chat <span class="badge">new</span></a>
+              </li>
+          </ul>
+
+        <!-- Tab content-->
+        <div class="tab-content">
+            <!-- Profile tab -->
+            <div role="tabpanel" class="tab-pane fade in" id="profile">
+
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Info
+                                        <a href="#" class="pull-right edit-link">Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+
+                                    <div class="row info-row">
+                                        <div class="col-md-5 info-label">Full Name:</div>
+                                        <div class="col-md-7">Mr. Stephen Wai</div>
+                                    </div>
+                                    <div class="row info-row">
+                                        <div class="col-md-5 info-label">Email:</div>
+                                        <div class="col-md-7">yo@stephenwai.com</div>
+                                    </div>
+                                    <div class="row info-row">
+                                        <div class="col-md-5 info-label">Address: </div>
+                                        <div class="col-md-7">645 Harrison St<br>San Francisco, CA 94107</div>
+                                    </div>
+                                    <div class="row info-row">
+                                        <div class="col-md-5 info-label">Mobile Phone:</div>
+                                        <div class="col-md-7">(555) 555-5555</div>
+                                    </div>
+                                    <div class="row info-row">
+                                        <div class="col-md-5 info-label">Work Phone:</div>
+                                        <div class="col-md-7">(555) 555-5555</div>
+                                    </div>
+                                    <div class="row info-row">
+                                        <div class="col-md-5 info-label">Birthday:</div>
+                                        <div class="col-md-7">June 18</div>
+                                    </div>
+                                    <div class="row info-row">
+                                        <div class="col-md-5 info-label">Company:</div>
+                                        <div class="col-md-7">Accenture</div>
+                                    </div>
+                                    <div class="row info-row">
+                                        <div class="col-md-5 info-label">Corporate/SET Number:</div>
+                                        <div class="col-md-7">14819</div>
+                                    </div>
+
+
+                                </div> <!-- /panel-body -->
+                            </div> <!-- /panel -->
+                        </div> <!--/col-md-6 -->
+
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Payment Methods
+                                        <a href="#" class="pull-right edit-link">Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+
+                                    <div class="list-group">
+                                        <div class="list-group-item">
+                                            <div class="row info-row">
+                                                <div class="col-md-5 info-label">Credit Card:</div>
+                                                <div class="col-md-7">American Express (default)</div>
+                                            </div>
+                                            <div class="row info-row">
+                                                <div class="col-md-5 info-label">Card Number:</div>
+                                                <div class="col-md-7">xxxx-xxxx-xxxx-9999</div>
+                                            </div>
+                                            <div class="row info-row">
+                                                <div class="col-md-5 info-label">Expiration:</div>
+                                                <div class="col-md-7">06/2016</div>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="row info-row">
+                                                <div class="col-md-5 info-label">Credit Card:</div>
+                                                <div class="col-md-7">Chase Sapphire</div>
+                                            </div>
+                                            <div class="row info-row">
+                                                <div class="col-md-5 info-label">Card Number:</div>
+                                                <div class="col-md-7">xxxx-xxxx-xxxx-9999</div>
+                                            </div>
+                                            <div class="row info-row">
+                                                <div class="col-md-5 info-label">Expiration:</div>
+                                                <div class="col-md-7">12/2018</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div> <!-- /panel-body -->
+                            </div>
+                        </div> <!--/col-md-6 -->
+
+                    </div> <!--/row -->
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Preferences
+                                    <a href="#" class="pull-right edit-link">Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+
+                                <div class="row info-row">
+                                    <div class="col-md-5 info-label">Room:</div>
+                                    <div class="col-md-7">Non-smoking<br>King bed<br>No accessibility preference</div>
+                                </div>
+                                <div class="row info-row">
+                                    <div class="col-md-5 info-label">Communication:</div>
+                                    <div class="col-md-7">Opt-in Text Chat</div>
+                                </div>
+                                <div class="row info-row">
+                                    <div class="col-md-5 info-label">Favorite Properties:</div>
+                                    <div class="col-md-7">Westin Jersey City Newport<br>Le Parker Meridien</div>
+                                </div>
+                                <div class="row info-row">
+                                    <div class="col-md-5 info-label">Brands:</div>
+                                    <div class="col-md-7">Westin, W, Le Meridien</div>
+                                </div>
+                                <div class="row info-row">
+                                    <div class="col-md-5 info-label">Frequent Flyer Programs:</div>
+                                    <div class="col-md-7">United Mileage Plus **********9999<br>Delta Air Skymiles **********9999</div>
+                                </div>
+
+                            </div> <!-- /panel-body -->
+                        </div>
+                    </div> <!--/col-md-6 -->
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Notes
+                                    <a href="#" class="pull-right edit-link">Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="list-group notes-list">
+                                    <div class="list-group-item">
+                                        Favorite Thai - Pad kee mao
+                                        Drink - Diet coke, pourover coffee
+                                    </div>
+                                    <div class="list-group-item">
+                                        6/29/15 - Requested room in Napa for Labor day weekend
+                                    </div>
+                                    <div class="list-group-item">
+                                        5/14/15 - Send gift for member's birthday in June
+                                    </div>
+                                    <div class="list-group-item">
+                                        5/06/15 - Member enjoyed room upgrade at Le Meridien San Francisco
+                                    </div>
+                                    <div class="list-group-item">
+                                        4/23/15 - Member reported bad experience at Sheraton Brooklyn
+                                    </div>
+                                </div>
+                            </div> <!--/panel-body -->
+                        </div>
+                    </div> <!--/col-md-6 -->
+
+                </div> <!-- /row -->
+            </div> <!-- /container-fluid -->
+
+            </div> <!-- /Profile tab -->
+
+            <!-- Stays tab -->
+            <div role="tabpanel" class="tab-pane fade in" id="stays">
+
+                <div class="container cust-fixed">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Upcoming Stays</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <ul class="media-list">
+                            <li class="media">
+                            <div class="media-left">
+                                <%= image_tag "whoboken.jpg", alt: "W Hoboken", class: "media-object" %>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">W Hoboken</h4>
+                                <p class="list-group-item-text">Hoboken, NJ</p>
+                                <p class="list-group-item-text">08/21/2015 to 08/23/2015</p>
+                                <p class="list-group-item-text">
+                                <a href="#" class="stay-action-link">View Details</a> | 
+                                <a href="#" class="stay-action-link">Change</a> | 
+                                <a href="#" class="stay-action-link">Cancel</a> | 
+                                <a href="#" class="stay-action-link">Contact Hotel</a> | 
+                                <a href="#" class="stay-action-link">Send Confirmation</a>
+                                </p>
+                            </div>
+                            </li>
+                        </ul> <!-- /media-list -->
+
+                    </div> <!-- /panel-body -->
+                </div> <!-- /panel -->
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Past Stays</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <ul class="media-list">
+                            <li class="media">
+                            <div class="media-left">
+                                <%= image_tag "westinjc.jpg", alt: "Westin Jersey City Newport", class: "media-object" %>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Westin Jersey City Newport</h4>
+                                <p class="list-group-item-text">Jersey City, NJ</p>
+                                <p class="list-group-item-text">06/15/2015 to 06/18/2015</p>
+                                <p class="list-group-item-text">
+                                <a href="#" class="stay-action-link">View Details</a> | 
+                                <a href="#" class="stay-action-link">Contact Hotel</a> | 
+                                <a href="#" class="stay-action-link">Book Again</a>
+                                </p>
+                            </div>
+                            </li>
+                            <li class="media">
+                            <div class="media-left">
+                                <%= image_tag "westinjc.jpg", alt: "Westin Jersey City Newport", class: "media-object" %>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Westin Jersey City Newport</h4>
+                                <p class="list-group-item-text">Jersey City, NJ</p>
+                                <p class="list-group-item-text">06/08/2015 to 06/11/2015</p>
+                                <p class="list-group-item-text">
+                                <a href="#" class="stay-action-link">View Details</a> | 
+                                <a href="#" class="stay-action-link">Contact Hotel</a> | 
+                                <a href="#" class="stay-action-link">Book Again</a>
+                                </p>
+                            </div>
+                            </li>
+                            <li class="media">
+                            <div class="media-left">
+                                <%= image_tag "westinjc.jpg", alt: "Westin Jersey City Newport", class: "media-object" %>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Westin Jersey City Newport</h4>
+                                <p class="list-group-item-text">Jersey City, NJ</p>
+                                <p class="list-group-item-text">05/25/2015 to 05/28/2015</p>
+                                <p class="list-group-item-text">
+                                <a href="#" class="stay-action-link">View Details</a> | 
+                                <a href="#" class="stay-action-link">Contact Hotel</a> | 
+                                <a href="#" class="stay-action-link">Book Again</a>
+                                </p>
+                            </div>
+                            </li>
+                        </ul> <!-- /media-list -->
+
+                    </div> <!-- /panel-body -->
+                </div> <!-- /panel -->
+
+            </div> <!-- /container -->
+
+            </div>
+            <!-- /Stays tab -->
+
+            <!-- Chat tab -->
+            <div role="tabpanel" class="tab-pane fade in active" id="chat">
+
+                <div class="container cust-fixed">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Text Chat to (555) 555-5555</h3>
+                    </div>
+
+<!-- DYNAMIC CHAT CONTENT -->
+
+    <%= yield %>
+
+<!-- /DYNAMIC CHAT CONTENT -->
+
+              </div> <!-- /panel -->
+
+            </div> <!-- /container -->
+
+            </div>
+            <!-- /Chat tab -->
+
+        </div>
+        <!-- /Dashboard -->
+
+    </div>
+    </div>
+    <!-- /Wrapper -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <%= javascript_include_tag 'application' %>
+  </body>
+</html>

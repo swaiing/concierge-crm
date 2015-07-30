@@ -1,0 +1,64 @@
+<div class="panel-body">
+
+<div class="row">
+  <div class="col-md-2 timestamp">8:05 AM</div>
+  <div class="col-md-10">
+    <div class="panel panel-default support">
+      <div class="panel-body">
+        Hi Stephen, did you want to add late check-out to your reservation?
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-10">
+    <div class="panel panel-default member">
+      <div class="panel-body">
+        Yes plz!  11am would be great
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2 timestamp">9:37 AM</div>
+</div>
+
+<div class="row">
+  <div class="col-md-5"></div>
+  <div class="col-md-2 today-panel"> Today </div>
+  <div class="col-md-5"></div>
+</div>
+
+<% @messages.each do |message| %>
+
+  <div class="row">
+    <% if message.user_id == 1 %>
+    <div class="col-md-2 timestamp"><%= message.created_at.in_time_zone('Pacific Time (US & Canada)').strftime("%I:%M %p") %></div>
+    <% end %>
+    <div class="col-md-10">
+      <div class="panel panel-default <%= message.user_id == 1 ? "support" : "member" %>">
+        <div class="panel-body"> <%= message.body %></div>
+      </div>
+    </div>
+    <% if message.user_id != 1 %>
+    <div class="col-md-2 timestamp"><%= message.created_at.in_time_zone('Pacific Time (US & Canada)').strftime("%I:%M %p") %></div>
+    <% end %>
+  </div>
+
+<% end %>
+
+</div> <!-- /panel-body -->
+
+<div class="panel-footer">
+  <%= form_tag '/support_messages' do%>
+  <div class="input-group">
+    <%= text_field_tag :body, '', class: "form-control", autocomplete: "off"%>
+    <span class="input-group-btn">
+      <button class="btn btn-default" type="submit">Send</button>
+    </span>
+  </div><!-- /input-group -->
+  <% end %>
+</div> <!-- /panel-footer -->
+
+<input type="hidden" value="<%= @message_count %>" id="message_count">
+
+
